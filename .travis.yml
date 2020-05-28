@@ -4,5 +4,8 @@ python:
 cache: pip3
 install:
   - pip3 install -r requirements.txt
+  - pip3 install codecov
 script:
   - python3 test.py
+after_sucess:
+  - codecov
