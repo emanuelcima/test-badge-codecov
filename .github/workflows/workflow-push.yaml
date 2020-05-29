@@ -19,9 +19,9 @@ jobs:
           pip3 install codecov
           pip3 install coverage
           coverage run -m unittest discover
+          coverage report --fail-under=80
           echo $(pwd)
           echo $(ls)
       - name: Upload coverage to Codecov
         run:
-          coverage report --fail-under=80
           bash <(curl -s https://codecov.io/bash)
