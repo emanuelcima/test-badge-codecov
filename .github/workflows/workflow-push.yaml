@@ -23,4 +23,5 @@ jobs:
           echo $(ls)
       - name: Upload coverage to Codecov
         run:
+          coverage report --fail-under=80
           bash <(curl -s https://codecov.io/bash)
